@@ -18,41 +18,8 @@
     <div class="row-50">
         <div class="timer"><span id="time"></span></div>
     </div>
-    <script>
-        function startTimer(duration, display) {
-            var timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                display.textContent = minutes + ":" + seconds;
-
-                if (--timer < -1) {
-                    display.textContent = "DONE";
-                }
-
-                ContentnessMeterFill();
-                console.log(ContentnessMeterFill().geduld)
-            }, 500+ContentnessMeterFill().geduld*10);           
-        }
-
-        window.onload = function () {
-            var countdown = 45 * 60,
-                display = document.querySelector('#time');
-            startTimer(countdown, display);
-        };
-    </script>
-    <script>
-        async function ContentnessMeterFill() {
-            const response = await fetch(`https://api.rutgerpronk.com/geduld`)
-            const parsed = await response.json()
-            const geduld = parsed.geduld;
-            document.getElementById("Contentness-meter").style.width = geduld + "%"
-        }
-    </script>
 </body>
 
 </html>
+
+<script src="script.js"></script>
