@@ -30,11 +30,13 @@ function timerTick() {
   minutes = minutes < 10 ? "0" + minutes : minutes;
   seconds = seconds < 10 ? "0" + seconds : seconds;
 
+  timerDisplay.textContent = minutes + ":" + seconds;
+
   if (--countdown < -1) {
-    timerDisplay.textContent = "DONE";
+    timerDisplay.textContent = "00:00";
   }
 
-  timerDisplay.textContent = minutes + ":" + seconds;
+ 
 
   // Recursively call timerTick based on interval
   // calculate a number between 2/3 and 1 1/3 based on currentGeduld
