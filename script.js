@@ -1,8 +1,10 @@
 let currentGeduld;
 let countdown = 45 * 60;
 let timerDisplay = document.querySelector("#time");
+let intro = new Audio("intro.mp3");
 
 async function setDefaultGeduld() {
+  currentGeduld = 50;
   await fetch("https://api.rutgerpronk.com/geduld", {
     method: "POST",
     headers: {
@@ -18,7 +20,6 @@ async function getGeduld() {
   const json = await response.json();
   return json.geduld;
 }
-
 
 function timerTick() {
   // TODO: logic to remove 1 second from countdown
@@ -50,6 +51,7 @@ async function driver() {
 // This is the "main" function
 (async () => {
   await setDefaultGeduld();
+  intro.play();
 
   // These two happen in parallel. timerTick is a recursive function. driver is called every second.
   timerTick();

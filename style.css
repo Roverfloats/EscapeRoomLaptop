@@ -6,28 +6,42 @@ body, html{
 }
 
 @font-face {
-    font-family: myFirstFont;
+    font-family: timer;
     src: url(alarm-clock.ttf);
+}
+
+@font-face {
+    font-family: texts;
+    src: url(KodeMono-VariableFont_wght.ttf);
 }
 
 .row-50{
     display: flex;
-    flex-direction: column;
     height: 50%;
-    width: 100%;
+    width: 80%;
+    margin: 0 10%;
     align-items: center;
     justify-content: center;
+}
+
+.col-50{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;  
 }
 
 .Contentness-meter-text{
     color: red;
     margin-bottom: 30px;
     font-size: 300%;
-    font-family: myFirstFont;
+    font-family: texts;
 }
 
 .Contentness-meter-container{
-    width: 80%;
+    width: 100%;
     height: 100px;
     border-radius: 5px;
     overflow: hidden;
@@ -46,5 +60,12 @@ body, html{
 .timer{
     color: red;
     font-size: 1000%;
-    font-family: myFirstFont;
+    font-family: timer;
+}
+
+.timerExplaination{
+    color: red;
+    margin-bottom: 30px;
+    font-size: 150%;
+    font-family: texts;
 }
