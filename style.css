@@ -1,50 +1,141 @@
 body, html{
     height: 100%;
     margin: 0;
-    padding: 0;
-    background-color: black;
+    padding: 30px;
+    background-color: #FFEBD7
+}
+
+body{
+    overflow: hidden;
 }
 
 @font-face {
-    font-family: myFirstFont;
-    src: url(alarm-clock.ttf);
+    font-family: timer;
+    src: url(fonts/alarm-clock.ttf);
+}
+
+@font-face {
+    font-family: texts;
+    src: url(fonts/Fenwick.ttf);
 }
 
 .row-50{
     display: flex;
-    flex-direction: column;
     height: 50%;
-    width: 100%;
+    width: 80%;
+    margin: 0 10%;
     align-items: center;
     justify-content: center;
 }
 
-.Contentness-meter-text{
-    color: red;
+.meter-explaination-container{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+}
+
+.meter-explaination{
+    color: #EF4367;
+    font-size: 100%;
+    font-family: texts;
+}
+
+.angry{
+    width: max-content;
+    color: #EF4367;
     margin-bottom: 30px;
-    font-size: 300%;
-    font-family: myFirstFont;
+    font-size: 150%;
+    font-family: texts;
+}
+
+.happy{
+    width: max-content;
+    color: #EF4367;
+    margin-bottom: 30px;
+    font-size: 150%;
+    font-family: texts;
 }
 
 .Contentness-meter-container{
-    width: 80%;
+    display: flex;
+    width: 100%;
     height: 100px;
-    border-radius: 5px;
+    border-radius: 25px;
     overflow: hidden;
-    background-color: gray;
+    background-color: white;
     justify-content: left;
     align-items: center;
+    margin-top: -10px;
+    border: 5px black solid;
+    z-index: 2;
 }
 
 .Contentness-meter{
     transition: width 1s ease-in-out;
     height: 100%;
     width: 50%;
-    background-color: red;
+    background-color: #EF4367;
 }
 
 .timer{
-    color: red;
+    margin-top: -350px;
+    color: #EF4367;
     font-size: 1000%;
-    font-family: myFirstFont;
+    font-family: timer;
+}
+
+.Contentness-meter-text{
+    color: #EF4367;
+    font-size: 300%;
+    font-family: texts;
+}
+
+.start-game-button{
+    height: 200px;
+    width: 300px;
+    background-color: #EF4367;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 300%;
+    font-family: texts;
+}
+
+.background-menu{
+    display: flex;
+    background-color: #FFEBD7;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-group{
+    position: sticky;
+    bottom: 0;
+    left: 0;    
+}
+
+.logo{
+    width: auto;
+    height: 200px;
+}
+
+.spacing{
+    height: 50px;
+    width: auto;
+}
+
+.eyes-group{
+    display: flex;
+    position: sticky;
+    justify-content: center;
+    z-index: 1;
+}
+
+.eyes{
+    width: 400px;
+    height: auto;
 }
