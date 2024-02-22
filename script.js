@@ -58,8 +58,9 @@ function timerTick() {
     car.play();
   }
 
-  if (countdown == 0){
+  if (countdown == -1){
     WTHIE.play();
+    LoopMusic.pause();
   }
  
   // Recursively call timerTick based on interval
@@ -86,7 +87,7 @@ async function driver() {
   currentGeduld = await getGeduld();
   document.getElementById("Contentness-meter").style.width =
     currentGeduld + "%";
-
+    
     if (currentGeduld < 50){
       opacityAmmount = ((-currentGeduld * 2) / 100) + 1;
     }
