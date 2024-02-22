@@ -1,4 +1,4 @@
-let currentGeduld;
+let currentGeduld = 50;
 let countdown = 45 * 60;
 let timerDisplay = document.querySelector("#time");
 let intro = document.querySelector("#Intro");
@@ -12,18 +12,6 @@ let WTHIE = document.querySelector("#WTHIE");
 let car = document.querySelector("#car");
 let opacityAmmount;
 
-async function setDefaultGeduld() {
-  currentGeduld = 50;
-  await fetch("https://api.rutgerpronk.com/geduld", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      newGeduld: 50,
-    }),
-  });
-}
 async function getGeduld() {
   const response = await fetch(`https://api.rutgerpronk.com/geduld`);
   const json = await response.json();
@@ -102,7 +90,6 @@ async function driver() {
 
 // This is the "main" function
 (async () => {
-  await setDefaultGeduld();
   introAndMusic();
 
   // These two happen in parallel. timerTick is a recursive function. driver is called every second.
