@@ -59,6 +59,7 @@ body{
 }
 
 .Contentness-meter-container{
+    display: flex;
     width: 100%;
     height: 100px;
     border-radius: 25px;
@@ -66,6 +67,9 @@ body{
     background-color: white;
     justify-content: left;
     align-items: center;
+    margin-top: -10px;
+    border: 5px black solid;
+    z-index: 2;
 }
 
 .Contentness-meter{
@@ -84,12 +88,9 @@ body{
 
 .Contentness-meter-text{
     color: #EF4367;
-    margin-bottom: 30px;
     font-size: 300%;
     font-family: texts;
 }
-
-
 
 .start-game-button{
     height: 200px;
@@ -111,9 +112,30 @@ body{
     align-items: center;
 }
 
+.logo-group{
+    position: sticky;
+    bottom: 0;
+    left: 0;    
+}
+
 .logo{
-    height: 200px;
     width: auto;
-    position: absolute;
-    
+    height: 200px;
+}
+
+.spacing{
+    height: 50px;
+    width: auto;
+}
+
+.eyes-group{
+    display: flex;
+    position: sticky;
+    justify-content: center;
+    z-index: 1;
+}
+
+.eyes{
+    width: 400px;
+    height: auto;
 }
